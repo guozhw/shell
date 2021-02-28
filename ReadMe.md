@@ -13,10 +13,17 @@ if [ -r ~/.bashrc ]; then
 fi
 
 2. in Unix/Linux platforms, put the following code in .bashrc:
-if [ -r /home/guozhw/basic.env ]; then
-   source /home/guozhw/basic.env
+``` shell
+mybashrc=/mnt/hdd/app/conf.d/shell/mybashrc
+if [ -r $mybashrc ]; then
+   source $mybashrc
 fi
-
+```
+or
+```shell
+mybashrc=/mnt/hdd/app/conf.d/shell/mybashrc
+[ -f $mybashrc ] && source $mybashrc
+```
 ## ANSI 转义序列
 Shell 可以通过一些特殊的转义序列，控制终端上的字符颜色、光标位置等。ANSI 转义序列 就是这些特殊序列的一种标准，基本上所有终端都支持（就连著名的小黑窗，Win32 控制台在 Windows 10 TH2 之后也支持 ANSI 转义序列了）。
 以文本颜色为例，16 色 ANSI 转义序列大概长这样：
