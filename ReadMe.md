@@ -6,6 +6,17 @@ https://github.com/haccks/zsh-config
 
 https://github.com/qoomon/my-zsh
 
+## configure
+1. in mac os platforms, Softlink your file to .bashrc or put your configuration code in .bashrc, then source .bashrc from .bash_profile with the following code in .bash_profile:
+if [ -r ~/.bashrc ]; then
+   source ~/.bashrc
+fi
+
+2. in Unix/Linux platforms, put the following code in .bashrc:
+if [ -r /home/guozhw/basic.env ]; then
+   source /home/guozhw/basic.env
+fi
+
 ## ANSI 转义序列
 Shell 可以通过一些特殊的转义序列，控制终端上的字符颜色、光标位置等。ANSI 转义序列 就是这些特殊序列的一种标准，基本上所有终端都支持（就连著名的小黑窗，Win32 控制台在 Windows 10 TH2 之后也支持 ANSI 转义序列了）。
 以文本颜色为例，16 色 ANSI 转义序列大概长这样：
