@@ -105,6 +105,9 @@ print -P "[%{$fg[green]%}%n%{$reset_color%}@%{$fg[red]%}%m %{$fg[blue]%}%1~%{$re
 ```
 ## Reference
 [教你写一个 Zsh 主题](https://printempw.github.io/zsh-prompt-theme-customization/)
+
 [你不需要花哨的命令提示符](https://zhuanlan.zhihu.com/p/51008087)
+
 [Crazy POWERFUL Bash Prompt](https://www.askapache.com/linux/bash-power-prompt/)
+
 [如何修改Bash Shell的提示符的格式和配色](http://blog.itpub.net/69955379/viewspace-2705072/)
