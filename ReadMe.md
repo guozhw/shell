@@ -103,6 +103,9 @@ print -P "[%{$fg[green]%}%n%{$reset_color%}@%{$fg[red]%}%m %{$fg[blue]%}%1~%{$re
 '\e[47m' # 白色 背景
 ‘\e[0m' # 重置为默认值
 ```
+## LS_COLORS
+[Configuring LS_COLORS](http://www.bigsoft.co.uk/blog/2008/04/11/configuring-ls_colors)
+[LS_COLORS](https://github.com/trapd00r/LS_COLORS)
 ## Reference
 [教你写一个 Zsh 主题](https://printempw.github.io/zsh-prompt-theme-customization/)
 
