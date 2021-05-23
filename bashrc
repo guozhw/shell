@@ -1,23 +1,13 @@
-# bash Prompt.
-<<'COMMENT'
-export PS1="\e[35m[\\u\e[m@\e[36m\\h \e[33m\\W]\e[1,33m\\$\e[m "
-命令解释：
-"[\e[35m[\\u: 开头添加中括号"["，当前登录的用户部分使用紫色字体
-\e[m@: "@"符号不给配色，使用默认颜色
-\e[36m\\h : 主机名称部分使用青色
-\e[33m\\W]: 当前所在目录使用黄颜色，在其后面添加中括号"]"
-\e[1,33m\\$\e[m ": $符号加粗，使用黄颜色
-COMMENT
+#!/usr/bin/env bash
 
-purple='\e[35m'
-cyan='\e[36m'
-yellow='\e[33m'
-bold_yellow='\e[1,33m'
-default='\e[m'
+# Enable Wayland support for Mozilla Firefox
+export MOZ_ENABLE_WAYLAND=1
 
 if [ -n "$BASH_VERSION" ]; then
     if [ "$UID" -eq 0 ]; then
-        export PS1="\\[$(tput setaf 1)\\]\\u@\\h:\\w #\\[$(tput sgr0)\\]"
+        # export PS1="\\[$(tput setaf 1)\\]\\u@\\h:\\w #\\[$(tput sgr0)\\]"
+        # export PS1="\[\033[m\]|\[\033[1;35m\]\t\[\033[m\]|\[\e[1m\]\u\[\e[1;36m\]\[\033[m\]@\[\e[1;36m\]\h\[\033[m\]:\[\e[0m\]\[\e[1;32m\][\W]> \[\e[0m\]"
+        export PS1="\n\[\e[1;30m\][$$:$PPID - \j:\!\[\e[1;30m\]]\[\e[0;36m\] \T \[\e[1;30m\][\[\e[1;34m\]\u@\H\[\e[1;30m\]:\[\e[0;37m\]${SSH_TTY:-o} \[\e[0;32m\]+${SHLVL}\[\e[1;30m\]] \[\e[1;37m\]\w\[\e[0;37m\] \n\$ "
     else
         export PS1="${purple}[\\u${default}@${cyan}\\h ${yellow}\\W]${bold_yellow}\\$\e[m "
     fi
@@ -45,10 +35,10 @@ alias grep='grep --color'
 alias fuck='sudo $(history -p \!\!)'
 
 # History.
-HISTCONTROL=ignoreboth # Don't put duplicate lines or lines starting with space in the history
-HISTSIZE=1000
-HISTFILESIZE=2000
-HISTTIMEFORMAT="%d/%m/%y %T "
+export HISTCONTROL=ignorespace:erasedups # Don't put duplicate lines or lines starting with space in the history
+export HISTSIZE=1000
+export HISTFILESIZE=2000
+export HISTTIMEFORMAT="[%Y-%m-%d %H:%M:%S] "
 shopt -s histappend # Append to the history file, don't overwrite it
 
 # Enable bash completion
