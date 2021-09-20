@@ -6,6 +6,10 @@ https://github.com/haccks/zsh-config
 
 https://github.com/qoomon/my-zsh
 
+## install
+yay -Sy bash-completion
+emerge --ask app-shells/bash-completion
+
 ## configure
 1. in mac os platforms, Softlink your file to .bashrc or put your configuration code in .bashrc, then source .bashrc from .bash_profile with the following code in .bash_profile:
 if [ -r ~/.bashrc ]; then
